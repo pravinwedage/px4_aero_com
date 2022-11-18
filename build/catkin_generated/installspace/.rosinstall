@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/pravin/px4_ws/install/setup.sh
