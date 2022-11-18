@@ -1,11 +1,11 @@
 /***************************************************************************************************************************
 * pos_controller_PID.h
 *
-* Author: Qyp
+* Author: Pravin Wedage
 *
-* Update Time: 2019.6.29
+* Update Time: 2022/11/18 
 *
-* Introduction:  Position Controller using normal PID 
+* Introduction:  Fixed Wing UDE based controller 
 *                 output = a_ff + K_p * pos_error + K_d * vel_error + K_i * pos_error * dt;
 ***************************************************************************************************************************/
 #ifndef POS_CONTROLLER_PID_H
