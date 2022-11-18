@@ -104,7 +104,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/DroneState.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/DroneState.h
 string
 -
 vector
@@ -124,7 +124,7 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/Mocap.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/Mocap.h
 string
 -
 vector

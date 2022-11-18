@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/pravin/px4_ws/devel/lib/px4_command/outdoorwifitest"
-  "/home/pravin/px4_ws/devel/lib/px4_command/outdoorwifitest.pdb"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/outdoorwifitest"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/outdoorwifitest.pdb"
   "CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.o"
 )
 

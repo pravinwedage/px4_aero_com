@@ -48,69 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pravin/px4_ws/src
+CMAKE_SOURCE_DIR = /home/pravin/px4_ws/src/px4_command
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pravin/px4_ws/build
+CMAKE_BINARY_DIR = /home/pravin/px4_ws/build/px4_command
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -135,16 +79,72 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/pravin/px4_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/pravin/px4_ws/build/CMakeFiles /home/pravin/px4_ws/build/px4_command/CMakeFiles/progress.marks
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pravin/px4_ws/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pravin/px4_ws/build/px4_command/CMakeFiles /home/pravin/px4_ws/build/px4_command/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pravin/px4_ws/build/px4_command/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/clean
+	$(MAKE) -f CMakeFiles/Makefile2 clean
 .PHONY : clean
 
 # The main clean target
@@ -154,1773 +154,1656 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/preinstall
+	$(MAKE) -f CMakeFiles/Makefile2 preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/pravin/px4_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-px4_command/CMakeFiles/set_uav2_mode.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/set_uav2_mode.dir/rule
-.PHONY : px4_command/CMakeFiles/set_uav2_mode.dir/rule
-
-# Convenience name for target.
-set_uav2_mode: px4_command/CMakeFiles/set_uav2_mode.dir/rule
-
-.PHONY : set_uav2_mode
-
-# fast build rule for target.
-set_uav2_mode/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav2_mode.dir/build.make px4_command/CMakeFiles/set_uav2_mode.dir/build
-.PHONY : set_uav2_mode/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/rule
-
-# Convenience name for target.
-px4_multidrone_pos_estimator_outdoor: px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/rule
-
-.PHONY : px4_multidrone_pos_estimator_outdoor
-
-# fast build rule for target.
-px4_multidrone_pos_estimator_outdoor/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build
-.PHONY : px4_multidrone_pos_estimator_outdoor/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/rule
-
-# Convenience name for target.
-px4_multidrone_pos_estimator_pure_vision: px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/rule
-
-.PHONY : px4_multidrone_pos_estimator_pure_vision
-
-# fast build rule for target.
-px4_multidrone_pos_estimator_pure_vision/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build
-.PHONY : px4_multidrone_pos_estimator_pure_vision/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/rule
-
-# Convenience name for target.
-px4_multidrone_pos_estimator: px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/rule
-
-.PHONY : px4_multidrone_pos_estimator
-
-# fast build rule for target.
-px4_multidrone_pos_estimator/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/build
-.PHONY : px4_multidrone_pos_estimator/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/rule
-
-# Convenience name for target.
-px4_multidrone_pos_controller: px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/rule
-
-.PHONY : px4_multidrone_pos_controller
-
-# fast build rule for target.
-px4_multidrone_pos_controller/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/build
-.PHONY : px4_multidrone_pos_controller/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_py.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages_py: px4_command/CMakeFiles/px4_command_generate_messages_py.dir/rule
-
-.PHONY : px4_command_generate_messages_py
-
-# fast build rule for target.
-px4_command_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages_py.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages_py.dir/build
-.PHONY : px4_command_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_genlisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_genlisp.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_genlisp.dir/rule
-
-# Convenience name for target.
-px4_command_genlisp: px4_command/CMakeFiles/px4_command_genlisp.dir/rule
-
-.PHONY : px4_command_genlisp
-
-# fast build rule for target.
-px4_command_genlisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_genlisp.dir/build.make px4_command/CMakeFiles/px4_command_genlisp.dir/build
-.PHONY : px4_command_genlisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages_lisp: px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/rule
-
-.PHONY : px4_command_generate_messages_lisp
-
-# fast build rule for target.
-px4_command_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages_lisp.dir/build
-.PHONY : px4_command_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_MultiPayloadAction: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_MultiPayloadAction
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_MultiPayloadAction/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_MultiPayloadAction/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_SinglePayloadAction: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_SinglePayloadAction
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_SinglePayloadAction/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_SinglePayloadAction/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_GeneralInfo: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_GeneralInfo
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_GeneralInfo/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_GeneralInfo/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_ControlParameter: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_ControlParameter
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_ControlParameter/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_ControlParameter/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_PayloadPoseCommand: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_PayloadPoseCommand
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_PayloadPoseCommand/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_PayloadPoseCommand/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_ControlOutput: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_ControlOutput
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_ControlOutput/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_ControlOutput/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_Topic_for_log: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_Topic_for_log
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_Topic_for_log/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_Topic_for_log/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_DroneState: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_DroneState
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_DroneState/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_DroneState/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_Mocap: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_Mocap
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_Mocap/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_Mocap/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_TrajectoryPoint: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_TrajectoryPoint
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_TrajectoryPoint/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_TrajectoryPoint/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/outdoorwifitest.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/outdoorwifitest.dir/rule
-.PHONY : px4_command/CMakeFiles/outdoorwifitest.dir/rule
-
-# Convenience name for target.
-outdoorwifitest: px4_command/CMakeFiles/outdoorwifitest.dir/rule
-
-.PHONY : outdoorwifitest
-
-# fast build rule for target.
-outdoorwifitest/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest.dir/build.make px4_command/CMakeFiles/outdoorwifitest.dir/build
-.PHONY : outdoorwifitest/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_AuxiliaryState: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_AuxiliaryState/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages: px4_command/CMakeFiles/px4_command_generate_messages.dir/rule
-
-.PHONY : px4_command_generate_messages
-
-# fast build rule for target.
-px4_command_generate_messages/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages.dir/build
-.PHONY : px4_command_generate_messages/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_nodejs: px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_srvs_generate_messages_nodejs
-
-# fast build rule for target.
-std_srvs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
-.PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_interdrone_communication.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_interdrone_communication.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_interdrone_communication.dir/rule
-
-# Convenience name for target.
-px4_interdrone_communication: px4_command/CMakeFiles/px4_interdrone_communication.dir/rule
-
-.PHONY : px4_interdrone_communication
-
-# fast build rule for target.
-px4_interdrone_communication/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_interdrone_communication.dir/build.make px4_command/CMakeFiles/px4_interdrone_communication.dir/build
-.PHONY : px4_interdrone_communication/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_lisp: px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_nodejs: px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: px4_command/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_generate_messages_py.dir/build.make px4_command/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_lisp: px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/set_uav0_mode.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/set_uav0_mode.dir/rule
-.PHONY : px4_command/CMakeFiles/set_uav0_mode.dir/rule
-
-# Convenience name for target.
-set_uav0_mode: px4_command/CMakeFiles/set_uav0_mode.dir/rule
-
-.PHONY : set_uav0_mode
-
-# fast build rule for target.
-set_uav0_mode/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav0_mode.dir/build.make px4_command/CMakeFiles/set_uav0_mode.dir/build
-.PHONY : set_uav0_mode/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_ControlCommand: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_ControlCommand
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_ControlCommand/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_ControlCommand/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_eus: px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
-
-.PHONY : nav_msgs_generate_messages_eus
-
-# fast build rule for target.
-nav_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
-.PHONY : nav_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/outdoorwifitest_ground.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/outdoorwifitest_ground.dir/rule
-.PHONY : px4_command/CMakeFiles/outdoorwifitest_ground.dir/rule
-
-# Convenience name for target.
-outdoorwifitest_ground: px4_command/CMakeFiles/outdoorwifitest_ground.dir/rule
-
-.PHONY : outdoorwifitest_ground
-
-# fast build rule for target.
-outdoorwifitest_ground/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest_ground.dir/build.make px4_command/CMakeFiles/outdoorwifitest_ground.dir/build
-.PHONY : outdoorwifitest_ground/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_cpp: px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
-.PHONY : diagnostic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_HomePosition: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_HomePosition
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_HomePosition/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_HomePosition/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_eus: px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_eus
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
-.PHONY : diagnostic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages_eus: px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/rule
-
-.PHONY : px4_command_generate_messages_eus
-
-# fast build rule for target.
-px4_command_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages_eus.dir/build
-.PHONY : px4_command_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages_cpp: px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/rule
-
-.PHONY : px4_command_generate_messages_cpp
-
-# fast build rule for target.
-px4_command_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages_cpp.dir/build
-.PHONY : px4_command_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_py: px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_py
-
-# fast build rule for target.
-geographic_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
-.PHONY : geographic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_genpy.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_genpy.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_genpy.dir/rule
-
-# Convenience name for target.
-px4_command_genpy: px4_command/CMakeFiles/px4_command_genpy.dir/rule
-
-.PHONY : px4_command_genpy
-
-# fast build rule for target.
-px4_command_genpy/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_genpy.dir/build.make px4_command/CMakeFiles/px4_command_genpy.dir/build
-.PHONY : px4_command_genpy/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_py: px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
-
-.PHONY : nav_msgs_generate_messages_py
-
-# fast build rule for target.
-nav_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/nav_msgs_generate_messages_py.dir/build
-.PHONY : nav_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_Trajectory: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_Trajectory
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_Trajectory/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_Trajectory/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-px4_command_generate_messages_nodejs: px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/rule
-
-.PHONY : px4_command_generate_messages_nodejs
-
-# fast build rule for target.
-px4_command_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/px4_command_generate_messages_nodejs.dir/build
-.PHONY : px4_command_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: px4_command/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/roscpp_generate_messages_py.dir/build.make px4_command/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_cpp: px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_cpp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
-.PHONY : uuid_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/build.make px4_command/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_eus: px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_eus
-
-# fast build rule for target.
-uuid_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
-.PHONY : uuid_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_py: px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_py
-
-# fast build rule for target.
-mavros_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
-.PHONY : mavros_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_gencpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_gencpp.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_gencpp.dir/rule
-
-# Convenience name for target.
-px4_command_gencpp: px4_command/CMakeFiles/px4_command_gencpp.dir/rule
-
-.PHONY : px4_command_gencpp
-
-# fast build rule for target.
-px4_command_gencpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_gencpp.dir/build.make px4_command/CMakeFiles/px4_command_gencpp.dir/build
-.PHONY : px4_command_gencpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/set_uav1_mode.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/set_uav1_mode.dir/rule
-.PHONY : px4_command/CMakeFiles/set_uav1_mode.dir/rule
-
-# Convenience name for target.
-set_uav1_mode: px4_command/CMakeFiles/set_uav1_mode.dir/rule
-
-.PHONY : set_uav1_mode
-
-# fast build rule for target.
-set_uav1_mode/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav1_mode.dir/build.make px4_command/CMakeFiles/set_uav1_mode.dir/build
-.PHONY : set_uav1_mode/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : px4_command/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: px4_command/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_catkin_empty_exported_target.dir/build.make px4_command/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/build.make px4_command/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_lisp: px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
-.PHONY : geographic_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_FleetStatus: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_FleetStatus
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_FleetStatus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_FleetStatus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_cpp: px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_cpp
-
-# fast build rule for target.
-nav_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
-.PHONY : nav_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_py: px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_py
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
-.PHONY : diagnostic_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_nodejs: px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : nav_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-nav_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
-.PHONY : nav_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_AddonForce: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_AddonForce
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_AddonForce/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_AddonForce/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_AttitudeReference: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_AttitudeReference
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_AttitudeReference/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_AttitudeReference/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_Emergency: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_Emergency
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_Emergency/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_Emergency/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_lisp: px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_lisp
-
-# fast build rule for target.
-uuid_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
-.PHONY : uuid_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-diagnostic_msgs_generate_messages_nodejs: px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : diagnostic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-diagnostic_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
-.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_eus: px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_eus
-
-# fast build rule for target.
-mavros_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
-.PHONY : mavros_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_cpp: px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geographic_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
-.PHONY : geographic_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_eus: px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_eus
-
-# fast build rule for target.
-geographic_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
-.PHONY : geographic_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geographic_msgs_generate_messages_nodejs: px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geographic_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geographic_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
-.PHONY : geographic_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_gennodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_gennodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_gennodejs.dir/rule
-
-# Convenience name for target.
-px4_command_gennodejs: px4_command/CMakeFiles/px4_command_gennodejs.dir/rule
-
-.PHONY : px4_command_gennodejs
-
-# fast build rule for target.
-px4_command_gennodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_gennodejs.dir/build.make px4_command/CMakeFiles/px4_command_gennodejs.dir/build
-.PHONY : px4_command_gennodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_nodejs: px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-uuid_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
-.PHONY : uuid_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-uuid_msgs_generate_messages_py: px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
-
-.PHONY : uuid_msgs_generate_messages_py
-
-# fast build rule for target.
-uuid_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
-.PHONY : uuid_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_cpp: px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_cpp
-
-# fast build rule for target.
-mavros_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
-.PHONY : mavros_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/rule
-.PHONY : px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/rule
-
-# Convenience name for target.
-_px4_command_generate_messages_check_deps_SetHome: px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/rule
-
-.PHONY : _px4_command_generate_messages_check_deps_SetHome
-
-# fast build rule for target.
-_px4_command_generate_messages_check_deps_SetHome/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/build.make px4_command/CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/build
-.PHONY : _px4_command_generate_messages_check_deps_SetHome/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_lisp: px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_lisp
-
-# fast build rule for target.
-mavros_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
-.PHONY : mavros_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-mavros_msgs_generate_messages_nodejs: px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : mavros_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-mavros_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
-.PHONY : mavros_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nav_msgs_generate_messages_lisp: px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : nav_msgs_generate_messages_lisp
-
-# fast build rule for target.
-nav_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
-.PHONY : nav_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/px4_command_geneus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/px4_command_geneus.dir/rule
-.PHONY : px4_command/CMakeFiles/px4_command_geneus.dir/rule
-
-# Convenience name for target.
-px4_command_geneus: px4_command/CMakeFiles/px4_command_geneus.dir/rule
-
-.PHONY : px4_command_geneus
-
-# fast build rule for target.
-px4_command_geneus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_command_geneus.dir/build.make px4_command/CMakeFiles/px4_command_geneus.dir/build
-.PHONY : px4_command_geneus/fast
-
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_cpp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_cpp
 .PHONY : actionlib_msgs_generate_messages_cpp
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+#=============================================================================
+# Target rules for targets named px4_command_geneus
 
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
+# Build rule for target.
+px4_command_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_geneus
+.PHONY : px4_command_geneus
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make px4_command/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
+px4_command_geneus/fast:
+	$(MAKE) -f CMakeFiles/px4_command_geneus.dir/build.make CMakeFiles/px4_command_geneus.dir/build
+.PHONY : px4_command_geneus/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+#=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_lisp
 
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
+# Build rule for target.
+mavros_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_lisp
+.PHONY : mavros_msgs_generate_messages_lisp
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make px4_command/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+mavros_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
+.PHONY : mavros_msgs_generate_messages_lisp/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_py
 
-# Convenience name for target.
-actionlib_generate_messages_eus: px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
+# Build rule for target.
+actionlib_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_py
+.PHONY : actionlib_msgs_generate_messages_py
 
 # fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/build.make px4_command/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
+actionlib_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+#=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_cpp
 
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
+# Build rule for target.
+mavros_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_cpp
+.PHONY : mavros_msgs_generate_messages_cpp
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make px4_command/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
+mavros_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
+.PHONY : mavros_msgs_generate_messages_cpp/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_py
 
-# Convenience name for target.
-std_msgs_generate_messages_eus: px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
+# Build rule for target.
+tf2_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
+.PHONY : tf2_msgs_generate_messages_py
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make px4_command/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
+tf2_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
 
-# Convenience name for target.
-px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f CMakeFiles/Makefile2 px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_py
 
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+# Build rule for target.
+uuid_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_py
+.PHONY : uuid_msgs_generate_messages_py
 
+# fast build rule for target.
+uuid_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make CMakeFiles/uuid_msgs_generate_messages_py.dir/build
+.PHONY : uuid_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_nodejs
+
+# Build rule for target.
+uuid_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_nodejs
+.PHONY : uuid_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+uuid_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
+.PHONY : uuid_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geographic_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_nodejs
+.PHONY : geographic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geographic_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
+.PHONY : geographic_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_cpp
+
+# Build rule for target.
+geographic_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_cpp
+.PHONY : geographic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geographic_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
+.PHONY : geographic_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_nodejs
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_nodejs
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_eus
+
+# Build rule for target.
+mavros_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_eus
+.PHONY : mavros_msgs_generate_messages_eus
+
+# fast build rule for target.
+mavros_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
+.PHONY : mavros_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_nodejs
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_nodejs
+.PHONY : diagnostic_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
+.PHONY : diagnostic_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
 .PHONY : actionlib_msgs_generate_messages_nodejs
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make px4_command/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_lisp
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_lisp
+.PHONY : diagnostic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_py
+
+# Build rule for target.
+actionlib_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_py
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/actionlib_generate_messages_py.dir/build.make CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_eus
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_eus
+.PHONY : diagnostic_msgs_generate_messages_eus
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+.PHONY : diagnostic_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_cpp
+
+# Build rule for target.
+nav_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_cpp
+.PHONY : nav_msgs_generate_messages_cpp
+
+# fast build rule for target.
+nav_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_FleetStatus
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_FleetStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_FleetStatus
+.PHONY : _px4_command_generate_messages_check_deps_FleetStatus
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_FleetStatus/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_FleetStatus.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_FleetStatus/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_eus
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_eus
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_gennodejs
+
+# Build rule for target.
+px4_command_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_gennodejs
+.PHONY : px4_command_gennodejs
+
+# fast build rule for target.
+px4_command_gennodejs/fast:
+	$(MAKE) -f CMakeFiles/px4_command_gennodejs.dir/build.make CMakeFiles/px4_command_gennodejs.dir/build
+.PHONY : px4_command_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_eus
+
+# Build rule for target.
+actionlib_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_eus
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/actionlib_generate_messages_eus.dir/build.make CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_nodejs
+
+# Build rule for target.
+roscpp_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_lisp
+
+# Build rule for target.
+geographic_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_lisp
+.PHONY : geographic_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geographic_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
+.PHONY : geographic_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_gencpp
+
+# Build rule for target.
+px4_command_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_gencpp
+.PHONY : px4_command_gencpp
+
+# fast build rule for target.
+px4_command_gencpp/fast:
+	$(MAKE) -f CMakeFiles/px4_command_gencpp.dir/build.make CMakeFiles/px4_command_gencpp.dir/build
+.PHONY : px4_command_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_eus
+
+# Build rule for target.
+geographic_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_eus
+.PHONY : geographic_msgs_generate_messages_eus
+
+# fast build rule for target.
+geographic_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
+.PHONY : geographic_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_py
+
+# Build rule for target.
+mavros_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_py
+.PHONY : mavros_msgs_generate_messages_py
+
+# fast build rule for target.
+mavros_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make CMakeFiles/mavros_msgs_generate_messages_py.dir/build
+.PHONY : mavros_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_eus
+
+# Build rule for target.
+uuid_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_eus
+.PHONY : uuid_msgs_generate_messages_eus
+
+# fast build rule for target.
+uuid_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+.PHONY : uuid_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_eus
+
+# Build rule for target.
+roscpp_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_eus
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_eus.dir/build.make CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_cpp
+
+# Build rule for target.
+uuid_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_cpp
+.PHONY : uuid_msgs_generate_messages_cpp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
+.PHONY : uuid_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_AttitudeReference
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_AttitudeReference: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_AttitudeReference
+.PHONY : _px4_command_generate_messages_check_deps_AttitudeReference
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_AttitudeReference/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_AttitudeReference.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_AttitudeReference/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_eus
+
+# Build rule for target.
+tf2_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_eus
+.PHONY : tf2_msgs_generate_messages_eus
+
+# fast build rule for target.
+tf2_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+.PHONY : tf2_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages_nodejs
+
+# Build rule for target.
+px4_command_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages_nodejs
+.PHONY : px4_command_generate_messages_nodejs
+
+# fast build rule for target.
+px4_command_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages_nodejs.dir/build.make CMakeFiles/px4_command_generate_messages_nodejs.dir/build
+.PHONY : px4_command_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_SetHome
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_SetHome: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_SetHome
+.PHONY : _px4_command_generate_messages_check_deps_SetHome
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_SetHome/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_SetHome.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_SetHome/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_py
+
+# Build rule for target.
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_py.dir/build.make CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_cpp
+
+# Build rule for target.
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_cpp.dir/build.make CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_Trajectory
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_Trajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_Trajectory
+.PHONY : _px4_command_generate_messages_check_deps_Trajectory
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_Trajectory/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_Trajectory.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_Trajectory/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_py
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_py
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_Emergency
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_Emergency: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_Emergency
+.PHONY : _px4_command_generate_messages_check_deps_Emergency
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_Emergency/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_Emergency.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_Emergency/fast
+
+#=============================================================================
+# Target rules for targets named doxygen
+
+# Build rule for target.
+doxygen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 doxygen
+.PHONY : doxygen
+
+# fast build rule for target.
+doxygen/fast:
+	$(MAKE) -f CMakeFiles/doxygen.dir/build.make CMakeFiles/doxygen.dir/build
+.PHONY : doxygen/fast
+
+#=============================================================================
+# Target rules for targets named download_extra_data
+
+# Build rule for target.
+download_extra_data: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 download_extra_data
+.PHONY : download_extra_data
+
+# fast build rule for target.
+download_extra_data/fast:
+	$(MAKE) -f CMakeFiles/download_extra_data.dir/build.make CMakeFiles/download_extra_data.dir/build
+.PHONY : download_extra_data/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_cpp
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_cpp
+.PHONY : diagnostic_msgs_generate_messages_cpp
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+.PHONY : diagnostic_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named outdoorwifitest_ground
+
+# Build rule for target.
+outdoorwifitest_ground: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 outdoorwifitest_ground
+.PHONY : outdoorwifitest_ground
+
+# fast build rule for target.
+outdoorwifitest_ground/fast:
+	$(MAKE) -f CMakeFiles/outdoorwifitest_ground.dir/build.make CMakeFiles/outdoorwifitest_ground.dir/build
+.PHONY : outdoorwifitest_ground/fast
+
+#=============================================================================
+# Target rules for targets named run_tests
+
+# Build rule for target.
+run_tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests
+.PHONY : run_tests
+
+# fast build rule for target.
+run_tests/fast:
+	$(MAKE) -f CMakeFiles/run_tests.dir/build.make CMakeFiles/run_tests.dir/build
+.PHONY : run_tests/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_eus
+
+# Build rule for target.
+trajectory_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_eus
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_cpp
+
+# Build rule for target.
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_lisp
+
+# Build rule for target.
+std_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_lisp
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named _catkin_empty_exported_target
+
+# Build rule for target.
+_catkin_empty_exported_target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _catkin_empty_exported_target
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	$(MAKE) -f CMakeFiles/_catkin_empty_exported_target.dir/build.make CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_py
+
+# Build rule for target.
+trajectory_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_py
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named set_uav1_mode
+
+# Build rule for target.
+set_uav1_mode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 set_uav1_mode
+.PHONY : set_uav1_mode
+
+# fast build rule for target.
+set_uav1_mode/fast:
+	$(MAKE) -f CMakeFiles/set_uav1_mode.dir/build.make CMakeFiles/set_uav1_mode.dir/build
+.PHONY : set_uav1_mode/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results
+
+# Build rule for target.
+clean_test_results: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results
+.PHONY : clean_test_results
+
+# fast build rule for target.
+clean_test_results/fast:
+	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
+.PHONY : clean_test_results/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_lisp
+
+# Build rule for target.
+actionlib_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_lisp
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/actionlib_generate_messages_lisp.dir/build.make CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_DroneState
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_DroneState: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_DroneState
+.PHONY : _px4_command_generate_messages_check_deps_DroneState
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_DroneState/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_DroneState.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_DroneState/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_eus
+
+# Build rule for target.
+actionlib_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_eus
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_AddonForce
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_AddonForce: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_AddonForce
+.PHONY : _px4_command_generate_messages_check_deps_AddonForce
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_AddonForce/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_AddonForce.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_AddonForce/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_nodejs
+
+# Build rule for target.
+nav_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_nodejs
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_lisp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_lisp
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_HomePosition
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_HomePosition: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_HomePosition
+.PHONY : _px4_command_generate_messages_check_deps_HomePosition
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_HomePosition/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_HomePosition.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_HomePosition/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_py
+
+# Build rule for target.
+std_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_py
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_py.dir/build.make CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages_cpp
+
+# Build rule for target.
+px4_command_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages_cpp
+.PHONY : px4_command_generate_messages_cpp
+
+# fast build rule for target.
+px4_command_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages_cpp.dir/build.make CMakeFiles/px4_command_generate_messages_cpp.dir/build
+.PHONY : px4_command_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages_eus
+
+# Build rule for target.
+px4_command_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages_eus
+.PHONY : px4_command_generate_messages_eus
+
+# fast build rule for target.
+px4_command_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages_eus.dir/build.make CMakeFiles/px4_command_generate_messages_eus.dir/build
+.PHONY : px4_command_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_ControlCommand
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_ControlCommand: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_ControlCommand
+.PHONY : _px4_command_generate_messages_check_deps_ControlCommand
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_ControlCommand/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_ControlCommand.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_ControlCommand/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_nodejs
+
+# Build rule for target.
+std_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_cpp
+
+# Build rule for target.
+actionlib_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_cpp
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/actionlib_generate_messages_cpp.dir/build.make CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_lisp
+
+# Build rule for target.
+nav_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_lisp
+.PHONY : nav_msgs_generate_messages_lisp
+
+# fast build rule for target.
+nav_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_cpp
+
+# Build rule for target.
+tf2_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_cpp
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_lisp
+
+# Build rule for target.
+tf2_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_lisp
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_cpp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_cpp
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_lisp
+
+# Build rule for target.
+trajectory_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_lisp
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named set_uav0_mode
+
+# Build rule for target.
+set_uav0_mode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 set_uav0_mode
+.PHONY : set_uav0_mode
+
+# fast build rule for target.
+set_uav0_mode/fast:
+	$(MAKE) -f CMakeFiles/set_uav0_mode.dir/build.make CMakeFiles/set_uav0_mode.dir/build
+.PHONY : set_uav0_mode/fast
+
+#=============================================================================
+# Target rules for targets named trajectory_msgs_generate_messages_nodejs
+
+# Build rule for target.
+trajectory_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_msgs_generate_messages_nodejs
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV
+.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_eus
+
+# Build rule for target.
+std_srvs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_eus
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_eus.dir/build.make CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named px4_interdrone_communication
+
+# Build rule for target.
+px4_interdrone_communication: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_interdrone_communication
+.PHONY : px4_interdrone_communication
+
+# fast build rule for target.
+px4_interdrone_communication/fast:
+	$(MAKE) -f CMakeFiles/px4_interdrone_communication.dir/build.make CMakeFiles/px4_interdrone_communication.dir/build
+.PHONY : px4_interdrone_communication/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_eus
+
+# Build rule for target.
+std_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_eus.dir/build.make CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_genpy
+
+# Build rule for target.
+px4_command_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_genpy
+.PHONY : px4_command_genpy
+
+# fast build rule for target.
+px4_command_genpy/fast:
+	$(MAKE) -f CMakeFiles/px4_command_genpy.dir/build.make CMakeFiles/px4_command_genpy.dir/build
+.PHONY : px4_command_genpy/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_lisp
+
+# Build rule for target.
+roscpp_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_lisp
+.PHONY : roscpp_generate_messages_lisp
+
+# fast build rule for target.
+roscpp_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/roscpp_generate_messages_lisp.dir/build.make CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_lisp
+
+# Build rule for target.
+std_srvs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_nodejs
+
+# Build rule for target.
+std_srvs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_nodejs
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages
+
+# Build rule for target.
+px4_command_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages
+.PHONY : px4_command_generate_messages
+
+# fast build rule for target.
+px4_command_generate_messages/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages.dir/build.make CMakeFiles/px4_command_generate_messages.dir/build
+.PHONY : px4_command_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_AuxiliaryState
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_AuxiliaryState: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_AuxiliaryState
+.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_AuxiliaryState/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_AuxiliaryState.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_AuxiliaryState/fast
+
+#=============================================================================
+# Target rules for targets named outdoorwifitest
+
+# Build rule for target.
+outdoorwifitest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 outdoorwifitest
+.PHONY : outdoorwifitest
+
+# fast build rule for target.
+outdoorwifitest/fast:
+	$(MAKE) -f CMakeFiles/outdoorwifitest.dir/build.make CMakeFiles/outdoorwifitest.dir/build
+.PHONY : outdoorwifitest/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_nodejs
+
+# Build rule for target.
+tf2_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_nodejs
+.PHONY : tf2_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+tf2_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+.PHONY : tf2_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_TrajectoryPoint
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_TrajectoryPoint: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_TrajectoryPoint
+.PHONY : _px4_command_generate_messages_check_deps_TrajectoryPoint
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_TrajectoryPoint/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_TrajectoryPoint.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_TrajectoryPoint/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_Mocap
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_Mocap: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_Mocap
+.PHONY : _px4_command_generate_messages_check_deps_Mocap
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_Mocap/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_Mocap.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_Mocap/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_Topic_for_log
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_Topic_for_log: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_Topic_for_log
+.PHONY : _px4_command_generate_messages_check_deps_Topic_for_log
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_Topic_for_log/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_Topic_for_log.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_Topic_for_log/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_ControlOutput
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_ControlOutput: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_ControlOutput
+.PHONY : _px4_command_generate_messages_check_deps_ControlOutput
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_ControlOutput/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_ControlOutput.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_ControlOutput/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_PayloadPoseCommand
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_PayloadPoseCommand: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_PayloadPoseCommand
+.PHONY : _px4_command_generate_messages_check_deps_PayloadPoseCommand
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_PayloadPoseCommand/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_PayloadPoseCommand.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_PayloadPoseCommand/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_py
+
+# Build rule for target.
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/std_srvs_generate_messages_py.dir/build.make CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named geographic_msgs_generate_messages_py
+
+# Build rule for target.
+geographic_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geographic_msgs_generate_messages_py
+.PHONY : geographic_msgs_generate_messages_py
+
+# fast build rule for target.
+geographic_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make CMakeFiles/geographic_msgs_generate_messages_py.dir/build
+.PHONY : geographic_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_generate_messages_nodejs
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_ControlParameter
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_ControlParameter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_ControlParameter
+.PHONY : _px4_command_generate_messages_check_deps_ControlParameter
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_ControlParameter/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_ControlParameter.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_ControlParameter/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_GeneralInfo
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_GeneralInfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_GeneralInfo
+.PHONY : _px4_command_generate_messages_check_deps_GeneralInfo
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_GeneralInfo/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_GeneralInfo.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_GeneralInfo/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_py
+
+# Build rule for target.
+nav_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_py
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/nav_msgs_generate_messages_py.dir/build.make CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_SinglePayloadAction
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_SinglePayloadAction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_SinglePayloadAction
+.PHONY : _px4_command_generate_messages_check_deps_SinglePayloadAction
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_SinglePayloadAction/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_SinglePayloadAction.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_SinglePayloadAction/fast
+
+#=============================================================================
+# Target rules for targets named _px4_command_generate_messages_check_deps_MultiPayloadAction
+
+# Build rule for target.
+_px4_command_generate_messages_check_deps_MultiPayloadAction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _px4_command_generate_messages_check_deps_MultiPayloadAction
+.PHONY : _px4_command_generate_messages_check_deps_MultiPayloadAction
+
+# fast build rule for target.
+_px4_command_generate_messages_check_deps_MultiPayloadAction/fast:
+	$(MAKE) -f CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/build.make CMakeFiles/_px4_command_generate_messages_check_deps_MultiPayloadAction.dir/build
+.PHONY : _px4_command_generate_messages_check_deps_MultiPayloadAction/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages_lisp
+
+# Build rule for target.
+px4_command_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages_lisp
+.PHONY : px4_command_generate_messages_lisp
+
+# fast build rule for target.
+px4_command_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages_lisp.dir/build.make CMakeFiles/px4_command_generate_messages_lisp.dir/build
+.PHONY : px4_command_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named mavros_msgs_generate_messages_nodejs
+
+# Build rule for target.
+mavros_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mavros_msgs_generate_messages_nodejs
+.PHONY : mavros_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+mavros_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
+.PHONY : mavros_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named nav_msgs_generate_messages_eus
+
+# Build rule for target.
+nav_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nav_msgs_generate_messages_eus
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_genlisp
+
+# Build rule for target.
+px4_command_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_genlisp
+.PHONY : px4_command_genlisp
+
+# fast build rule for target.
+px4_command_genlisp/fast:
+	$(MAKE) -f CMakeFiles/px4_command_genlisp.dir/build.make CMakeFiles/px4_command_genlisp.dir/build
+.PHONY : px4_command_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named px4_command_generate_messages_py
+
+# Build rule for target.
+px4_command_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_command_generate_messages_py
+.PHONY : px4_command_generate_messages_py
+
+# fast build rule for target.
+px4_command_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/px4_command_generate_messages_py.dir/build.make CMakeFiles/px4_command_generate_messages_py.dir/build
+.PHONY : px4_command_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named px4_multidrone_pos_controller
+
+# Build rule for target.
+px4_multidrone_pos_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_multidrone_pos_controller
+.PHONY : px4_multidrone_pos_controller
+
+# fast build rule for target.
+px4_multidrone_pos_controller/fast:
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_controller.dir/build.make CMakeFiles/px4_multidrone_pos_controller.dir/build
+.PHONY : px4_multidrone_pos_controller/fast
+
+#=============================================================================
+# Target rules for targets named px4_multidrone_pos_estimator
+
+# Build rule for target.
+px4_multidrone_pos_estimator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_multidrone_pos_estimator
+.PHONY : px4_multidrone_pos_estimator
+
+# fast build rule for target.
+px4_multidrone_pos_estimator/fast:
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator.dir/build.make CMakeFiles/px4_multidrone_pos_estimator.dir/build
+.PHONY : px4_multidrone_pos_estimator/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_cpp
+
+# Build rule for target.
+std_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_cpp
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named px4_multidrone_pos_estimator_pure_vision
+
+# Build rule for target.
+px4_multidrone_pos_estimator_pure_vision: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_multidrone_pos_estimator_pure_vision
+.PHONY : px4_multidrone_pos_estimator_pure_vision
+
+# fast build rule for target.
+px4_multidrone_pos_estimator_pure_vision/fast:
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build
+.PHONY : px4_multidrone_pos_estimator_pure_vision/fast
+
+#=============================================================================
+# Target rules for targets named diagnostic_msgs_generate_messages_py
+
+# Build rule for target.
+diagnostic_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 diagnostic_msgs_generate_messages_py
+.PHONY : diagnostic_msgs_generate_messages_py
+
+# fast build rule for target.
+diagnostic_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+.PHONY : diagnostic_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named px4_multidrone_pos_estimator_outdoor
+
+# Build rule for target.
+px4_multidrone_pos_estimator_outdoor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4_multidrone_pos_estimator_outdoor
+.PHONY : px4_multidrone_pos_estimator_outdoor
+
+# fast build rule for target.
+px4_multidrone_pos_estimator_outdoor/fast:
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build
+.PHONY : px4_multidrone_pos_estimator_outdoor/fast
+
+#=============================================================================
+# Target rules for targets named uuid_msgs_generate_messages_lisp
+
+# Build rule for target.
+uuid_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uuid_msgs_generate_messages_lisp
+.PHONY : uuid_msgs_generate_messages_lisp
+
+# fast build rule for target.
+uuid_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
+.PHONY : uuid_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_lisp
+
+# Build rule for target.
+actionlib_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_lisp
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named set_uav2_mode
+
+# Build rule for target.
+set_uav2_mode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 set_uav2_mode
+.PHONY : set_uav2_mode
+
+# fast build rule for target.
+set_uav2_mode/fast:
+	$(MAKE) -f CMakeFiles/set_uav2_mode.dir/build.make CMakeFiles/set_uav2_mode.dir/build
+.PHONY : set_uav2_mode/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 src/Utilities/outdoorwifitest.o: src/Utilities/outdoorwifitest.cpp.o
 
@@ -1928,7 +1811,7 @@ src/Utilities/outdoorwifitest.o: src/Utilities/outdoorwifitest.cpp.o
 
 # target to build an object file
 src/Utilities/outdoorwifitest.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest.dir/build.make px4_command/CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.o
+	$(MAKE) -f CMakeFiles/outdoorwifitest.dir/build.make CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.o
 .PHONY : src/Utilities/outdoorwifitest.cpp.o
 
 src/Utilities/outdoorwifitest.i: src/Utilities/outdoorwifitest.cpp.i
@@ -1937,7 +1820,7 @@ src/Utilities/outdoorwifitest.i: src/Utilities/outdoorwifitest.cpp.i
 
 # target to preprocess a source file
 src/Utilities/outdoorwifitest.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest.dir/build.make px4_command/CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.i
+	$(MAKE) -f CMakeFiles/outdoorwifitest.dir/build.make CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.i
 .PHONY : src/Utilities/outdoorwifitest.cpp.i
 
 src/Utilities/outdoorwifitest.s: src/Utilities/outdoorwifitest.cpp.s
@@ -1946,7 +1829,7 @@ src/Utilities/outdoorwifitest.s: src/Utilities/outdoorwifitest.cpp.s
 
 # target to generate assembly for a file
 src/Utilities/outdoorwifitest.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest.dir/build.make px4_command/CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.s
+	$(MAKE) -f CMakeFiles/outdoorwifitest.dir/build.make CMakeFiles/outdoorwifitest.dir/src/Utilities/outdoorwifitest.cpp.s
 .PHONY : src/Utilities/outdoorwifitest.cpp.s
 
 src/Utilities/outdoorwifitest_ground.o: src/Utilities/outdoorwifitest_ground.cpp.o
@@ -1955,7 +1838,7 @@ src/Utilities/outdoorwifitest_ground.o: src/Utilities/outdoorwifitest_ground.cpp
 
 # target to build an object file
 src/Utilities/outdoorwifitest_ground.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest_ground.dir/build.make px4_command/CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.o
+	$(MAKE) -f CMakeFiles/outdoorwifitest_ground.dir/build.make CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.o
 .PHONY : src/Utilities/outdoorwifitest_ground.cpp.o
 
 src/Utilities/outdoorwifitest_ground.i: src/Utilities/outdoorwifitest_ground.cpp.i
@@ -1964,7 +1847,7 @@ src/Utilities/outdoorwifitest_ground.i: src/Utilities/outdoorwifitest_ground.cpp
 
 # target to preprocess a source file
 src/Utilities/outdoorwifitest_ground.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest_ground.dir/build.make px4_command/CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.i
+	$(MAKE) -f CMakeFiles/outdoorwifitest_ground.dir/build.make CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.i
 .PHONY : src/Utilities/outdoorwifitest_ground.cpp.i
 
 src/Utilities/outdoorwifitest_ground.s: src/Utilities/outdoorwifitest_ground.cpp.s
@@ -1973,7 +1856,7 @@ src/Utilities/outdoorwifitest_ground.s: src/Utilities/outdoorwifitest_ground.cpp
 
 # target to generate assembly for a file
 src/Utilities/outdoorwifitest_ground.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/outdoorwifitest_ground.dir/build.make px4_command/CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.s
+	$(MAKE) -f CMakeFiles/outdoorwifitest_ground.dir/build.make CMakeFiles/outdoorwifitest_ground.dir/src/Utilities/outdoorwifitest_ground.cpp.s
 .PHONY : src/Utilities/outdoorwifitest_ground.cpp.s
 
 src/Utilities/set_uav0_mode.o: src/Utilities/set_uav0_mode.cpp.o
@@ -1982,7 +1865,7 @@ src/Utilities/set_uav0_mode.o: src/Utilities/set_uav0_mode.cpp.o
 
 # target to build an object file
 src/Utilities/set_uav0_mode.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav0_mode.dir/build.make px4_command/CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.o
+	$(MAKE) -f CMakeFiles/set_uav0_mode.dir/build.make CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.o
 .PHONY : src/Utilities/set_uav0_mode.cpp.o
 
 src/Utilities/set_uav0_mode.i: src/Utilities/set_uav0_mode.cpp.i
@@ -1991,7 +1874,7 @@ src/Utilities/set_uav0_mode.i: src/Utilities/set_uav0_mode.cpp.i
 
 # target to preprocess a source file
 src/Utilities/set_uav0_mode.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav0_mode.dir/build.make px4_command/CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.i
+	$(MAKE) -f CMakeFiles/set_uav0_mode.dir/build.make CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.i
 .PHONY : src/Utilities/set_uav0_mode.cpp.i
 
 src/Utilities/set_uav0_mode.s: src/Utilities/set_uav0_mode.cpp.s
@@ -2000,7 +1883,7 @@ src/Utilities/set_uav0_mode.s: src/Utilities/set_uav0_mode.cpp.s
 
 # target to generate assembly for a file
 src/Utilities/set_uav0_mode.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav0_mode.dir/build.make px4_command/CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.s
+	$(MAKE) -f CMakeFiles/set_uav0_mode.dir/build.make CMakeFiles/set_uav0_mode.dir/src/Utilities/set_uav0_mode.cpp.s
 .PHONY : src/Utilities/set_uav0_mode.cpp.s
 
 src/Utilities/set_uav1_mode.o: src/Utilities/set_uav1_mode.cpp.o
@@ -2009,7 +1892,7 @@ src/Utilities/set_uav1_mode.o: src/Utilities/set_uav1_mode.cpp.o
 
 # target to build an object file
 src/Utilities/set_uav1_mode.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav1_mode.dir/build.make px4_command/CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.o
+	$(MAKE) -f CMakeFiles/set_uav1_mode.dir/build.make CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.o
 .PHONY : src/Utilities/set_uav1_mode.cpp.o
 
 src/Utilities/set_uav1_mode.i: src/Utilities/set_uav1_mode.cpp.i
@@ -2018,7 +1901,7 @@ src/Utilities/set_uav1_mode.i: src/Utilities/set_uav1_mode.cpp.i
 
 # target to preprocess a source file
 src/Utilities/set_uav1_mode.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav1_mode.dir/build.make px4_command/CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.i
+	$(MAKE) -f CMakeFiles/set_uav1_mode.dir/build.make CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.i
 .PHONY : src/Utilities/set_uav1_mode.cpp.i
 
 src/Utilities/set_uav1_mode.s: src/Utilities/set_uav1_mode.cpp.s
@@ -2027,7 +1910,7 @@ src/Utilities/set_uav1_mode.s: src/Utilities/set_uav1_mode.cpp.s
 
 # target to generate assembly for a file
 src/Utilities/set_uav1_mode.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav1_mode.dir/build.make px4_command/CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.s
+	$(MAKE) -f CMakeFiles/set_uav1_mode.dir/build.make CMakeFiles/set_uav1_mode.dir/src/Utilities/set_uav1_mode.cpp.s
 .PHONY : src/Utilities/set_uav1_mode.cpp.s
 
 src/Utilities/set_uav2_mode.o: src/Utilities/set_uav2_mode.cpp.o
@@ -2036,7 +1919,7 @@ src/Utilities/set_uav2_mode.o: src/Utilities/set_uav2_mode.cpp.o
 
 # target to build an object file
 src/Utilities/set_uav2_mode.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav2_mode.dir/build.make px4_command/CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.o
+	$(MAKE) -f CMakeFiles/set_uav2_mode.dir/build.make CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.o
 .PHONY : src/Utilities/set_uav2_mode.cpp.o
 
 src/Utilities/set_uav2_mode.i: src/Utilities/set_uav2_mode.cpp.i
@@ -2045,7 +1928,7 @@ src/Utilities/set_uav2_mode.i: src/Utilities/set_uav2_mode.cpp.i
 
 # target to preprocess a source file
 src/Utilities/set_uav2_mode.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav2_mode.dir/build.make px4_command/CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.i
+	$(MAKE) -f CMakeFiles/set_uav2_mode.dir/build.make CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.i
 .PHONY : src/Utilities/set_uav2_mode.cpp.i
 
 src/Utilities/set_uav2_mode.s: src/Utilities/set_uav2_mode.cpp.s
@@ -2054,7 +1937,7 @@ src/Utilities/set_uav2_mode.s: src/Utilities/set_uav2_mode.cpp.s
 
 # target to generate assembly for a file
 src/Utilities/set_uav2_mode.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/set_uav2_mode.dir/build.make px4_command/CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.s
+	$(MAKE) -f CMakeFiles/set_uav2_mode.dir/build.make CMakeFiles/set_uav2_mode.dir/src/Utilities/set_uav2_mode.cpp.s
 .PHONY : src/Utilities/set_uav2_mode.cpp.s
 
 src/px4_interdrone_communication.o: src/px4_interdrone_communication.cpp.o
@@ -2063,7 +1946,7 @@ src/px4_interdrone_communication.o: src/px4_interdrone_communication.cpp.o
 
 # target to build an object file
 src/px4_interdrone_communication.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_interdrone_communication.dir/build.make px4_command/CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.o
+	$(MAKE) -f CMakeFiles/px4_interdrone_communication.dir/build.make CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.o
 .PHONY : src/px4_interdrone_communication.cpp.o
 
 src/px4_interdrone_communication.i: src/px4_interdrone_communication.cpp.i
@@ -2072,7 +1955,7 @@ src/px4_interdrone_communication.i: src/px4_interdrone_communication.cpp.i
 
 # target to preprocess a source file
 src/px4_interdrone_communication.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_interdrone_communication.dir/build.make px4_command/CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.i
+	$(MAKE) -f CMakeFiles/px4_interdrone_communication.dir/build.make CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.i
 .PHONY : src/px4_interdrone_communication.cpp.i
 
 src/px4_interdrone_communication.s: src/px4_interdrone_communication.cpp.s
@@ -2081,7 +1964,7 @@ src/px4_interdrone_communication.s: src/px4_interdrone_communication.cpp.s
 
 # target to generate assembly for a file
 src/px4_interdrone_communication.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_interdrone_communication.dir/build.make px4_command/CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.s
+	$(MAKE) -f CMakeFiles/px4_interdrone_communication.dir/build.make CMakeFiles/px4_interdrone_communication.dir/src/px4_interdrone_communication.cpp.s
 .PHONY : src/px4_interdrone_communication.cpp.s
 
 src/px4_multidrone_pos_controller.o: src/px4_multidrone_pos_controller.cpp.o
@@ -2090,7 +1973,7 @@ src/px4_multidrone_pos_controller.o: src/px4_multidrone_pos_controller.cpp.o
 
 # target to build an object file
 src/px4_multidrone_pos_controller.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.o
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_controller.dir/build.make CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.o
 .PHONY : src/px4_multidrone_pos_controller.cpp.o
 
 src/px4_multidrone_pos_controller.i: src/px4_multidrone_pos_controller.cpp.i
@@ -2099,7 +1982,7 @@ src/px4_multidrone_pos_controller.i: src/px4_multidrone_pos_controller.cpp.i
 
 # target to preprocess a source file
 src/px4_multidrone_pos_controller.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.i
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_controller.dir/build.make CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.i
 .PHONY : src/px4_multidrone_pos_controller.cpp.i
 
 src/px4_multidrone_pos_controller.s: src/px4_multidrone_pos_controller.cpp.s
@@ -2108,7 +1991,7 @@ src/px4_multidrone_pos_controller.s: src/px4_multidrone_pos_controller.cpp.s
 
 # target to generate assembly for a file
 src/px4_multidrone_pos_controller.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.s
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_controller.dir/build.make CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.s
 .PHONY : src/px4_multidrone_pos_controller.cpp.s
 
 src/px4_multidrone_pos_estimator.o: src/px4_multidrone_pos_estimator.cpp.o
@@ -2117,7 +2000,7 @@ src/px4_multidrone_pos_estimator.o: src/px4_multidrone_pos_estimator.cpp.o
 
 # target to build an object file
 src/px4_multidrone_pos_estimator.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.o
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator.dir/build.make CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.o
 .PHONY : src/px4_multidrone_pos_estimator.cpp.o
 
 src/px4_multidrone_pos_estimator.i: src/px4_multidrone_pos_estimator.cpp.i
@@ -2126,7 +2009,7 @@ src/px4_multidrone_pos_estimator.i: src/px4_multidrone_pos_estimator.cpp.i
 
 # target to preprocess a source file
 src/px4_multidrone_pos_estimator.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.i
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator.dir/build.make CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.i
 .PHONY : src/px4_multidrone_pos_estimator.cpp.i
 
 src/px4_multidrone_pos_estimator.s: src/px4_multidrone_pos_estimator.cpp.s
@@ -2135,7 +2018,7 @@ src/px4_multidrone_pos_estimator.s: src/px4_multidrone_pos_estimator.cpp.s
 
 # target to generate assembly for a file
 src/px4_multidrone_pos_estimator.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.s
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator.dir/build.make CMakeFiles/px4_multidrone_pos_estimator.dir/src/px4_multidrone_pos_estimator.cpp.s
 .PHONY : src/px4_multidrone_pos_estimator.cpp.s
 
 src/px4_multidrone_pos_estimator_outdoor.o: src/px4_multidrone_pos_estimator_outdoor.cpp.o
@@ -2144,7 +2027,7 @@ src/px4_multidrone_pos_estimator_outdoor.o: src/px4_multidrone_pos_estimator_out
 
 # target to build an object file
 src/px4_multidrone_pos_estimator_outdoor.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.o
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.o
 .PHONY : src/px4_multidrone_pos_estimator_outdoor.cpp.o
 
 src/px4_multidrone_pos_estimator_outdoor.i: src/px4_multidrone_pos_estimator_outdoor.cpp.i
@@ -2153,7 +2036,7 @@ src/px4_multidrone_pos_estimator_outdoor.i: src/px4_multidrone_pos_estimator_out
 
 # target to preprocess a source file
 src/px4_multidrone_pos_estimator_outdoor.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.i
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.i
 .PHONY : src/px4_multidrone_pos_estimator_outdoor.cpp.i
 
 src/px4_multidrone_pos_estimator_outdoor.s: src/px4_multidrone_pos_estimator_outdoor.cpp.s
@@ -2162,7 +2045,7 @@ src/px4_multidrone_pos_estimator_outdoor.s: src/px4_multidrone_pos_estimator_out
 
 # target to generate assembly for a file
 src/px4_multidrone_pos_estimator_outdoor.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.s
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.s
 .PHONY : src/px4_multidrone_pos_estimator_outdoor.cpp.s
 
 src/px4_multidrone_pos_estimator_pure_vision.o: src/px4_multidrone_pos_estimator_pure_vision.cpp.o
@@ -2171,7 +2054,7 @@ src/px4_multidrone_pos_estimator_pure_vision.o: src/px4_multidrone_pos_estimator
 
 # target to build an object file
 src/px4_multidrone_pos_estimator_pure_vision.cpp.o:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.o
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.o
 .PHONY : src/px4_multidrone_pos_estimator_pure_vision.cpp.o
 
 src/px4_multidrone_pos_estimator_pure_vision.i: src/px4_multidrone_pos_estimator_pure_vision.cpp.i
@@ -2180,7 +2063,7 @@ src/px4_multidrone_pos_estimator_pure_vision.i: src/px4_multidrone_pos_estimator
 
 # target to preprocess a source file
 src/px4_multidrone_pos_estimator_pure_vision.cpp.i:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.i
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.i
 .PHONY : src/px4_multidrone_pos_estimator_pure_vision.cpp.i
 
 src/px4_multidrone_pos_estimator_pure_vision.s: src/px4_multidrone_pos_estimator_pure_vision.cpp.s
@@ -2189,7 +2072,7 @@ src/px4_multidrone_pos_estimator_pure_vision.s: src/px4_multidrone_pos_estimator
 
 # target to generate assembly for a file
 src/px4_multidrone_pos_estimator_pure_vision.cpp.s:
-	cd /home/pravin/px4_ws/build && $(MAKE) -f px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make px4_command/CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.s
+	$(MAKE) -f CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/build.make CMakeFiles/px4_multidrone_pos_estimator_pure_vision.dir/src/px4_multidrone_pos_estimator_pure_vision.cpp.s
 .PHONY : src/px4_multidrone_pos_estimator_pure_vision.cpp.s
 
 # Help Target
@@ -2198,130 +2081,139 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... test"
-	@echo "... set_uav2_mode"
-	@echo "... px4_multidrone_pos_estimator_outdoor"
-	@echo "... px4_multidrone_pos_estimator_pure_vision"
-	@echo "... px4_multidrone_pos_estimator"
-	@echo "... px4_multidrone_pos_controller"
-	@echo "... px4_command_generate_messages_py"
-	@echo "... px4_command_genlisp"
-	@echo "... px4_command_generate_messages_lisp"
-	@echo "... _px4_command_generate_messages_check_deps_MultiPayloadAction"
-	@echo "... _px4_command_generate_messages_check_deps_SinglePayloadAction"
-	@echo "... _px4_command_generate_messages_check_deps_GeneralInfo"
-	@echo "... _px4_command_generate_messages_check_deps_ControlParameter"
-	@echo "... _px4_command_generate_messages_check_deps_PayloadPoseCommand"
-	@echo "... _px4_command_generate_messages_check_deps_ControlOutput"
-	@echo "... _px4_command_generate_messages_check_deps_Topic_for_log"
-	@echo "... install"
-	@echo "... _px4_command_generate_messages_check_deps_DroneState"
-	@echo "... _px4_command_generate_messages_check_deps_Mocap"
-	@echo "... _px4_command_generate_messages_check_deps_TrajectoryPoint"
-	@echo "... outdoorwifitest"
-	@echo "... _px4_command_generate_messages_check_deps_AuxiliaryState"
-	@echo "... px4_command_generate_messages"
-	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... px4_interdrone_communication"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... diagnostic_msgs_generate_messages_lisp"
 	@echo "... install/local"
-	@echo "... set_uav0_mode"
-	@echo "... _px4_command_generate_messages_check_deps_ControlCommand"
-	@echo "... nav_msgs_generate_messages_eus"
-	@echo "... outdoorwifitest_ground"
-	@echo "... diagnostic_msgs_generate_messages_cpp"
-	@echo "... _px4_command_generate_messages_check_deps_HomePosition"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... diagnostic_msgs_generate_messages_eus"
-	@echo "... px4_command_generate_messages_eus"
-	@echo "... px4_command_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... edit_cache"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... geographic_msgs_generate_messages_py"
-	@echo "... px4_command_genpy"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... nav_msgs_generate_messages_py"
-	@echo "... _px4_command_generate_messages_check_deps_Trajectory"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... px4_command_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... uuid_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... uuid_msgs_generate_messages_eus"
-	@echo "... mavros_msgs_generate_messages_py"
-	@echo "... px4_command_gencpp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... set_uav1_mode"
-	@echo "... _catkin_empty_exported_target"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... geographic_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... _px4_command_generate_messages_check_deps_FleetStatus"
-	@echo "... nav_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... diagnostic_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... nav_msgs_generate_messages_nodejs"
-	@echo "... _px4_command_generate_messages_check_deps_AddonForce"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... _px4_command_generate_messages_check_deps_AttitudeReference"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... _px4_command_generate_messages_check_deps_Emergency"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... uuid_msgs_generate_messages_lisp"
-	@echo "... diagnostic_msgs_generate_messages_nodejs"
-	@echo "... mavros_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... geographic_msgs_generate_messages_cpp"
-	@echo "... geographic_msgs_generate_messages_eus"
-	@echo "... geographic_msgs_generate_messages_nodejs"
-	@echo "... px4_command_gennodejs"
-	@echo "... _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV"
-	@echo "... uuid_msgs_generate_messages_nodejs"
-	@echo "... uuid_msgs_generate_messages_py"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... mavros_msgs_generate_messages_cpp"
-	@echo "... _px4_command_generate_messages_check_deps_SetHome"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... mavros_msgs_generate_messages_lisp"
-	@echo "... mavros_msgs_generate_messages_nodejs"
-	@echo "... nav_msgs_generate_messages_lisp"
-	@echo "... px4_command_geneus"
 	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
+	@echo "... px4_command_geneus"
+	@echo "... mavros_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... mavros_msgs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... uuid_msgs_generate_messages_py"
+	@echo "... uuid_msgs_generate_messages_nodejs"
+	@echo "... geographic_msgs_generate_messages_nodejs"
+	@echo "... geographic_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... mavros_msgs_generate_messages_eus"
+	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... diagnostic_msgs_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... diagnostic_msgs_generate_messages_eus"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... edit_cache"
+	@echo "... _px4_command_generate_messages_check_deps_FleetStatus"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... px4_command_gennodejs"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... geographic_msgs_generate_messages_lisp"
+	@echo "... px4_command_gencpp"
+	@echo "... geographic_msgs_generate_messages_eus"
+	@echo "... mavros_msgs_generate_messages_py"
+	@echo "... uuid_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... uuid_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... _px4_command_generate_messages_check_deps_AttitudeReference"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... install/strip"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... px4_command_generate_messages_nodejs"
+	@echo "... _px4_command_generate_messages_check_deps_SetHome"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... _px4_command_generate_messages_check_deps_Trajectory"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... _px4_command_generate_messages_check_deps_Emergency"
+	@echo "... doxygen"
+	@echo "... download_extra_data"
+	@echo "... diagnostic_msgs_generate_messages_cpp"
+	@echo "... outdoorwifitest_ground"
+	@echo "... run_tests"
+	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... _catkin_empty_exported_target"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... set_uav1_mode"
+	@echo "... clean_test_results"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... tests"
+	@echo "... _px4_command_generate_messages_check_deps_DroneState"
+	@echo "... install"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... _px4_command_generate_messages_check_deps_AddonForce"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... _px4_command_generate_messages_check_deps_HomePosition"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... px4_command_generate_messages_cpp"
+	@echo "... px4_command_generate_messages_eus"
+	@echo "... _px4_command_generate_messages_check_deps_ControlCommand"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... nav_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... set_uav0_mode"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... _px4_command_generate_messages_check_deps_AuxiliaryState_singleUAV"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... px4_interdrone_communication"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... px4_command_genpy"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... px4_command_generate_messages"
+	@echo "... _px4_command_generate_messages_check_deps_AuxiliaryState"
+	@echo "... outdoorwifitest"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... _px4_command_generate_messages_check_deps_TrajectoryPoint"
+	@echo "... _px4_command_generate_messages_check_deps_Mocap"
+	@echo "... _px4_command_generate_messages_check_deps_Topic_for_log"
+	@echo "... _px4_command_generate_messages_check_deps_ControlOutput"
+	@echo "... _px4_command_generate_messages_check_deps_PayloadPoseCommand"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... geographic_msgs_generate_messages_py"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... _px4_command_generate_messages_check_deps_ControlParameter"
+	@echo "... _px4_command_generate_messages_check_deps_GeneralInfo"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... _px4_command_generate_messages_check_deps_SinglePayloadAction"
+	@echo "... _px4_command_generate_messages_check_deps_MultiPayloadAction"
+	@echo "... px4_command_generate_messages_lisp"
+	@echo "... mavros_msgs_generate_messages_nodejs"
+	@echo "... nav_msgs_generate_messages_eus"
+	@echo "... px4_command_genlisp"
+	@echo "... px4_command_generate_messages_py"
+	@echo "... px4_multidrone_pos_controller"
+	@echo "... px4_multidrone_pos_estimator"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... px4_multidrone_pos_estimator_pure_vision"
+	@echo "... diagnostic_msgs_generate_messages_py"
+	@echo "... px4_multidrone_pos_estimator_outdoor"
+	@echo "... uuid_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... set_uav2_mode"
+	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
 	@echo "... src/Utilities/outdoorwifitest.o"
 	@echo "... src/Utilities/outdoorwifitest.i"
 	@echo "... src/Utilities/outdoorwifitest.s"
@@ -2363,6 +2255,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/pravin/px4_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

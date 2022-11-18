@@ -1,6 +1,1 @@
-(cl:in-package px4_command-srv)
-(cl:export '(EMERGENCY_HAPPENED-VAL
-          EMERGENCY_HAPPENED
-          KILLCOMFIRMED-VAL
-          KILLCOMFIRMED
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/srv/_package_Emergency.lisp

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/pravin/px4_ws/devel/lib/px4_command/px4_multidrone_pos_controller"
-  "/home/pravin/px4_ws/devel/lib/px4_command/px4_multidrone_pos_controller.pdb"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/px4_multidrone_pos_controller"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/px4_multidrone_pos_controller.pdb"
   "CMakeFiles/px4_multidrone_pos_controller.dir/src/px4_multidrone_pos_controller.cpp.o"
 )
 

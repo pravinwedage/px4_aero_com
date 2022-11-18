@@ -43,253 +43,253 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pravin/px4_ws/src
+CMAKE_SOURCE_DIR = /home/pravin/px4_ws/src/px4_command
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pravin/px4_ws/build
+CMAKE_BINARY_DIR = /home/pravin/px4_ws/build/px4_command
 
 # Utility rule file for px4_command_generate_messages_py.
 
 # Include the progress variables for this target.
-include px4_command/CMakeFiles/px4_command_generate_messages_py.dir/progress.make
+include CMakeFiles/px4_command_generate_messages_py.dir/progress.make
 
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py
-px4_command/CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py
+CMakeFiles/px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py
 
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG px4_command/AuxiliaryState"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG px4_command/AuxiliaryState"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState_singleUAV.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG px4_command/AuxiliaryState_singleUAV"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState_singleUAV.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState_singleUAV.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG px4_command/AuxiliaryState_singleUAV"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AuxiliaryState_singleUAV.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG px4_command/ControlCommand"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG px4_command/ControlCommand"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG px4_command/TrajectoryPoint"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG px4_command/TrajectoryPoint"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG px4_command/Trajectory"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG px4_command/Trajectory"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG px4_command/AttitudeReference"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG px4_command/AttitudeReference"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG px4_command/DroneState"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG px4_command/DroneState"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG px4_command/Topic_for_log"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/DroneState.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py: /home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG px4_command/Topic_for_log"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG px4_command/ControlOutput"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG px4_command/ControlOutput"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /home/pravin/px4_ws/src/px4_command/msg/Mocap.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG px4_command/Mocap"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Mocap.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /home/pravin/px4_ws/src/px4_command/msg/Mocap.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG px4_command/Mocap"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/Mocap.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /home/pravin/px4_ws/src/px4_command/msg/AddonForce.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG px4_command/AddonForce"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AddonForce.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /home/pravin/px4_ws/src/px4_command/msg/AddonForce.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG px4_command/AddonForce"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/AddonForce.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /home/pravin/px4_ws/src/px4_command/msg/FleetStatus.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG px4_command/FleetStatus"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/FleetStatus.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /home/pravin/px4_ws/src/px4_command/msg/FleetStatus.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG px4_command/FleetStatus"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/FleetStatus.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /home/pravin/px4_ws/src/px4_command/msg/PayloadPoseCommand.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG px4_command/PayloadPoseCommand"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/PayloadPoseCommand.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /home/pravin/px4_ws/src/px4_command/msg/PayloadPoseCommand.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG px4_command/PayloadPoseCommand"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/PayloadPoseCommand.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG px4_command/HomePosition"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geographic_msgs/msg/GeoPoint.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG px4_command/HomePosition"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py: /home/pravin/px4_ws/src/px4_command/srv/ControlParameter.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python code from SRV px4_command/ControlParameter"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/ControlParameter.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py: /home/pravin/px4_ws/src/px4_command/srv/ControlParameter.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python code from SRV px4_command/ControlParameter"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/ControlParameter.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py: /home/pravin/px4_ws/src/px4_command/srv/Emergency.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python code from SRV px4_command/Emergency"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/Emergency.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py: /home/pravin/px4_ws/src/px4_command/srv/Emergency.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python code from SRV px4_command/Emergency"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/Emergency.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py: /home/pravin/px4_ws/src/px4_command/srv/GeneralInfo.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python code from SRV px4_command/GeneralInfo"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/GeneralInfo.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py: /home/pravin/px4_ws/src/px4_command/srv/GeneralInfo.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python code from SRV px4_command/GeneralInfo"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/GeneralInfo.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py: /home/pravin/px4_ws/src/px4_command/srv/SinglePayloadAction.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python code from SRV px4_command/SinglePayloadAction"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/SinglePayloadAction.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py: /home/pravin/px4_ws/src/px4_command/srv/SinglePayloadAction.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python code from SRV px4_command/SinglePayloadAction"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/SinglePayloadAction.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py: /home/pravin/px4_ws/src/px4_command/srv/MultiPayloadAction.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python code from SRV px4_command/MultiPayloadAction"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/MultiPayloadAction.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py: /home/pravin/px4_ws/src/px4_command/srv/MultiPayloadAction.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python code from SRV px4_command/MultiPayloadAction"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/MultiPayloadAction.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py: /home/pravin/px4_ws/src/px4_command/srv/SetHome.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python code from SRV px4_command/SetHome"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/SetHome.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py: /home/pravin/px4_ws/src/px4_command/srv/SetHome.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python code from SRV px4_command/SetHome"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/pravin/px4_ws/src/px4_command/srv/SetHome.srv -Ipx4_command:/home/pravin/px4_ws/src/px4_command/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Igeographic_msgs:/opt/ros/noetic/share/geographic_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -Iuuid_msgs:/opt/ros/noetic/share/uuid_msgs/cmake/../msg -p px4_command -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python msg __init__.py for px4_command"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg --initpy
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python msg __init__.py for px4_command"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg --initpy
 
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
-/home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python srv __init__.py for px4_command"
-	cd /home/pravin/px4_ws/build/px4_command && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv --initpy
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
+/home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/pravin/px4_ws/build/px4_command/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python srv __init__.py for px4_command"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv --initpy
 
-px4_command_generate_messages_py: px4_command/CMakeFiles/px4_command_generate_messages_py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_DroneState.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_Mocap.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_Emergency.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/_SetHome.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/msg/__init__.py
-px4_command_generate_messages_py: /home/pravin/px4_ws/devel/lib/python3/dist-packages/px4_command/srv/__init__.py
-px4_command_generate_messages_py: px4_command/CMakeFiles/px4_command_generate_messages_py.dir/build.make
+px4_command_generate_messages_py: CMakeFiles/px4_command_generate_messages_py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AuxiliaryState_singleUAV.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlCommand.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_TrajectoryPoint.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Trajectory.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AttitudeReference.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_DroneState.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Topic_for_log.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_ControlOutput.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_Mocap.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_AddonForce.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_FleetStatus.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_PayloadPoseCommand.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/_HomePosition.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_ControlParameter.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_Emergency.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_GeneralInfo.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SinglePayloadAction.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_MultiPayloadAction.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/_SetHome.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/msg/__init__.py
+px4_command_generate_messages_py: /home/pravin/px4_ws/devel/.private/px4_command/lib/python3/dist-packages/px4_command/srv/__init__.py
+px4_command_generate_messages_py: CMakeFiles/px4_command_generate_messages_py.dir/build.make
 
 .PHONY : px4_command_generate_messages_py
 
 # Rule to build all files generated by this target.
-px4_command/CMakeFiles/px4_command_generate_messages_py.dir/build: px4_command_generate_messages_py
+CMakeFiles/px4_command_generate_messages_py.dir/build: px4_command_generate_messages_py
 
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_py.dir/build
+.PHONY : CMakeFiles/px4_command_generate_messages_py.dir/build
 
-px4_command/CMakeFiles/px4_command_generate_messages_py.dir/clean:
-	cd /home/pravin/px4_ws/build/px4_command && $(CMAKE_COMMAND) -P CMakeFiles/px4_command_generate_messages_py.dir/cmake_clean.cmake
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_py.dir/clean
+CMakeFiles/px4_command_generate_messages_py.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/px4_command_generate_messages_py.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/px4_command_generate_messages_py.dir/clean
 
-px4_command/CMakeFiles/px4_command_generate_messages_py.dir/depend:
-	cd /home/pravin/px4_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pravin/px4_ws/src /home/pravin/px4_ws/src/px4_command /home/pravin/px4_ws/build /home/pravin/px4_ws/build/px4_command /home/pravin/px4_ws/build/px4_command/CMakeFiles/px4_command_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : px4_command/CMakeFiles/px4_command_generate_messages_py.dir/depend
+CMakeFiles/px4_command_generate_messages_py.dir/depend:
+	cd /home/pravin/px4_ws/build/px4_command && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pravin/px4_ws/src/px4_command /home/pravin/px4_ws/src/px4_command /home/pravin/px4_ws/build/px4_command /home/pravin/px4_ws/build/px4_command /home/pravin/px4_ws/build/px4_command/CMakeFiles/px4_command_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/px4_command_generate_messages_py.dir/depend
 

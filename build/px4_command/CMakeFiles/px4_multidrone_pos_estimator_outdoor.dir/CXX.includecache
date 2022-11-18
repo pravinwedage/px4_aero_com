@@ -168,7 +168,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/AttitudeReference.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/AttitudeReference.h
 string
 -
 vector
@@ -188,7 +188,7 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/ControlCommand.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/ControlCommand.h
 string
 -
 vector
@@ -208,7 +208,7 @@ std_msgs/Header.h
 px4_command/TrajectoryPoint.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/DroneState.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/DroneState.h
 string
 -
 vector
@@ -228,7 +228,7 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/HomePosition.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/HomePosition.h
 string
 -
 vector
@@ -254,7 +254,7 @@ geometry_msgs/Quaternion.h
 geometry_msgs/Vector3.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/SetHome.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/SetHome.h
 ros/service_traits.h
 -
 px4_command/SetHomeRequest.h
@@ -262,7 +262,7 @@ px4_command/SetHomeRequest.h
 px4_command/SetHomeResponse.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/SetHomeRequest.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/SetHomeRequest.h
 string
 -
 vector
@@ -278,7 +278,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/SetHomeResponse.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/SetHomeResponse.h
 string
 -
 vector
@@ -294,7 +294,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/TrajectoryPoint.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/TrajectoryPoint.h
 string
 -
 vector

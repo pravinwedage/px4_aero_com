@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=c++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"px4_command\"
 
-CXX_INCLUDES = -I/home/pravin/px4_ws/devel/include -I/home/pravin/px4_ws/src/px4_command/include -I/home/pravin/catkin_ws/devel/include -I/home/pravin/catkin_ws/devel/.private/mavros_msgs/include -I/home/pravin/catkin_ws/src/mavros/libmavconn/include -I/home/pravin/catkin_ws/src/mavros/mavros_msgs/include -I/home/pravin/catkin_ws/src/mavros/mavros/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 
+CXX_INCLUDES = -I/home/pravin/px4_ws/devel/.private/px4_command/include -I/home/pravin/px4_ws/src/px4_command/include -I/home/pravin/catkin_ws/devel/include -I/home/pravin/catkin_ws/devel/.private/mavros_msgs/include -I/home/pravin/catkin_ws/src/mavros/libmavconn/include -I/home/pravin/catkin_ws/src/mavros/mavros_msgs/include -I/home/pravin/catkin_ws/src/mavros/mavros/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3 
 

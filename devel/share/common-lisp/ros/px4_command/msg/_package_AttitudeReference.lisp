@@ -1,12 +1,1 @@
-(cl:in-package px4_command-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          THROTTLE_SP-VAL
-          THROTTLE_SP
-          DESIRED_THROTTLE-VAL
-          DESIRED_THROTTLE
-          DESIRED_ATTITUDE-VAL
-          DESIRED_ATTITUDE
-          DESIRED_ATT_Q-VAL
-          DESIRED_ATT_Q
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/msg/_package_AttitudeReference.lisp

@@ -29,7 +29,7 @@ add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg" NAME_WE)
 add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg" "std_msgs/Header:px4_command/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg" "px4_command/TrajectoryPoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg" NAME_WE)
@@ -39,7 +39,7 @@ add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg" NAME_WE)
 add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg" "std_msgs/Header:px4_command/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg" "px4_command/TrajectoryPoint:std_msgs/Header"
 )
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg" NAME_WE)
@@ -54,7 +54,7 @@ add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg" NAME_WE)
 add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg" "px4_command/DroneState:px4_command/ControlCommand:geometry_msgs/Quaternion:std_msgs/Header:px4_command/ControlOutput:px4_command/AttitudeReference:px4_command/TrajectoryPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg" "px4_command/TrajectoryPoint:std_msgs/Header:geometry_msgs/Quaternion:px4_command/AttitudeReference:px4_command/DroneState:px4_command/ControlOutput:px4_command/ControlCommand"
 )
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg" NAME_WE)
@@ -84,7 +84,7 @@ add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg" NAME_WE)
 add_custom_target(_px4_command_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg" "geometry_msgs/Quaternion:geometry_msgs/Vector3:std_msgs/Header:geometry_msgs/Point:geographic_msgs/GeoPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "px4_command" "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg" "std_msgs/Header:geometry_msgs/Quaternion:geographic_msgs/GeoPoint:geometry_msgs/Vector3:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/pravin/px4_ws/src/px4_command/srv/ControlParameter.srv" NAME_WE)
@@ -138,7 +138,7 @@ _generate_msg_cpp(px4_command
 _generate_msg_cpp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/px4_command
 )
 _generate_msg_cpp(px4_command
@@ -150,7 +150,7 @@ _generate_msg_cpp(px4_command
 _generate_msg_cpp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/px4_command
 )
 _generate_msg_cpp(px4_command
@@ -168,7 +168,7 @@ _generate_msg_cpp(px4_command
 _generate_msg_cpp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg"
   "${MSG_I_FLAGS}"
-  "/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/px4_command
 )
 _generate_msg_cpp(px4_command
@@ -204,7 +204,7 @@ _generate_msg_cpp(px4_command
 _generate_msg_cpp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/px4_command
 )
 
@@ -323,7 +323,7 @@ _generate_msg_eus(px4_command
 _generate_msg_eus(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/px4_command
 )
 _generate_msg_eus(px4_command
@@ -335,7 +335,7 @@ _generate_msg_eus(px4_command
 _generate_msg_eus(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/px4_command
 )
 _generate_msg_eus(px4_command
@@ -353,7 +353,7 @@ _generate_msg_eus(px4_command
 _generate_msg_eus(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg"
   "${MSG_I_FLAGS}"
-  "/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/px4_command
 )
 _generate_msg_eus(px4_command
@@ -389,7 +389,7 @@ _generate_msg_eus(px4_command
 _generate_msg_eus(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/px4_command
 )
 
@@ -508,7 +508,7 @@ _generate_msg_lisp(px4_command
 _generate_msg_lisp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/px4_command
 )
 _generate_msg_lisp(px4_command
@@ -520,7 +520,7 @@ _generate_msg_lisp(px4_command
 _generate_msg_lisp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/px4_command
 )
 _generate_msg_lisp(px4_command
@@ -538,7 +538,7 @@ _generate_msg_lisp(px4_command
 _generate_msg_lisp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg"
   "${MSG_I_FLAGS}"
-  "/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/px4_command
 )
 _generate_msg_lisp(px4_command
@@ -574,7 +574,7 @@ _generate_msg_lisp(px4_command
 _generate_msg_lisp(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/px4_command
 )
 
@@ -693,7 +693,7 @@ _generate_msg_nodejs(px4_command
 _generate_msg_nodejs(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/px4_command
 )
 _generate_msg_nodejs(px4_command
@@ -705,7 +705,7 @@ _generate_msg_nodejs(px4_command
 _generate_msg_nodejs(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/px4_command
 )
 _generate_msg_nodejs(px4_command
@@ -723,7 +723,7 @@ _generate_msg_nodejs(px4_command
 _generate_msg_nodejs(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg"
   "${MSG_I_FLAGS}"
-  "/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/px4_command
 )
 _generate_msg_nodejs(px4_command
@@ -759,7 +759,7 @@ _generate_msg_nodejs(px4_command
 _generate_msg_nodejs(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/px4_command
 )
 
@@ -878,7 +878,7 @@ _generate_msg_py(px4_command
 _generate_msg_py(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/px4_command
 )
 _generate_msg_py(px4_command
@@ -890,7 +890,7 @@ _generate_msg_py(px4_command
 _generate_msg_py(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Trajectory.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/px4_command
 )
 _generate_msg_py(px4_command
@@ -908,7 +908,7 @@ _generate_msg_py(px4_command
 _generate_msg_py(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/Topic_for_log.msg"
   "${MSG_I_FLAGS}"
-  "/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg"
+  "/home/pravin/px4_ws/src/px4_command/msg/TrajectoryPoint.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/pravin/px4_ws/src/px4_command/msg/AttitudeReference.msg;/home/pravin/px4_ws/src/px4_command/msg/DroneState.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlOutput.msg;/home/pravin/px4_ws/src/px4_command/msg/ControlCommand.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/px4_command
 )
 _generate_msg_py(px4_command
@@ -944,7 +944,7 @@ _generate_msg_py(px4_command
 _generate_msg_py(px4_command
   "/home/pravin/px4_ws/src/px4_command/msg/HomePosition.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geographic_msgs/cmake/../msg/GeoPoint.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Vector3.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/px4_command
 )
 

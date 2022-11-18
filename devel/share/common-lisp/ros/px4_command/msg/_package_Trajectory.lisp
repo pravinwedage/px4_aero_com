@@ -1,6 +1,1 @@
-(cl:in-package px4_command-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          POINTS-VAL
-          POINTS
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/msg/_package_Trajectory.lisp

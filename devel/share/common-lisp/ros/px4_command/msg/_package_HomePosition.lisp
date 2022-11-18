@@ -1,12 +1,1 @@
-(cl:in-package px4_command-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          GEO-VAL
-          GEO
-          POSITION-VAL
-          POSITION
-          ORIENTATION-VAL
-          ORIENTATION
-          APPROACH-VAL
-          APPROACH
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/msg/_package_HomePosition.lisp

@@ -168,7 +168,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/AddonForce.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/AddonForce.h
 string
 -
 vector
@@ -186,7 +186,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/AttitudeReference.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/AttitudeReference.h
 string
 -
 vector
@@ -206,7 +206,7 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/ControlCommand.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/ControlCommand.h
 string
 -
 vector
@@ -226,7 +226,7 @@ std_msgs/Header.h
 px4_command/TrajectoryPoint.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/DroneState.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/DroneState.h
 string
 -
 vector
@@ -246,7 +246,7 @@ std_msgs/Header.h
 geometry_msgs/Quaternion.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/FleetStatus.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/FleetStatus.h
 string
 -
 vector
@@ -264,7 +264,7 @@ ros/message_operations.h
 std_msgs/Header.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/MultiPayloadAction.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/MultiPayloadAction.h
 ros/service_traits.h
 -
 px4_command/MultiPayloadActionRequest.h
@@ -272,7 +272,7 @@ px4_command/MultiPayloadActionRequest.h
 px4_command/MultiPayloadActionResponse.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/MultiPayloadActionRequest.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/MultiPayloadActionRequest.h
 string
 -
 vector
@@ -288,7 +288,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/MultiPayloadActionResponse.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/MultiPayloadActionResponse.h
 string
 -
 vector
@@ -304,7 +304,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/pravin/px4_ws/devel/include/px4_command/TrajectoryPoint.h
+/home/pravin/px4_ws/devel/.private/px4_command/include/px4_command/TrajectoryPoint.h
 string
 -
 vector

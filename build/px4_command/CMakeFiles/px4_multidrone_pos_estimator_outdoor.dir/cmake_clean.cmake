@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/pravin/px4_ws/devel/lib/px4_command/px4_multidrone_pos_estimator_outdoor"
-  "/home/pravin/px4_ws/devel/lib/px4_command/px4_multidrone_pos_estimator_outdoor.pdb"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/px4_multidrone_pos_estimator_outdoor"
+  "/home/pravin/px4_ws/devel/.private/px4_command/lib/px4_command/px4_multidrone_pos_estimator_outdoor.pdb"
   "CMakeFiles/px4_multidrone_pos_estimator_outdoor.dir/src/px4_multidrone_pos_estimator_outdoor.cpp.o"
 )
 

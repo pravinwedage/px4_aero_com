@@ -1,10 +1,1 @@
-(cl:in-package px4_command-srv)
-(cl:export '(PERFORM_ACTION-VAL
-          PERFORM_ACTION
-          ACTION_TYPE-VAL
-          ACTION_TYPE
-          STATUS_OK-VAL
-          STATUS_OK
-          TRAJECTORY_TYPE-VAL
-          TRAJECTORY_TYPE
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/srv/_package_MultiPayloadAction.lisp

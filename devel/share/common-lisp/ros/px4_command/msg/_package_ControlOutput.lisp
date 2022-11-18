@@ -1,14 +1,1 @@
-(cl:in-package px4_command-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          U_L-VAL
-          U_L
-          U_D-VAL
-          U_D
-          NE-VAL
-          NE
-          THRUST-VAL
-          THRUST
-          THROTTLE-VAL
-          THROTTLE
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/msg/_package_ControlOutput.lisp

@@ -1,10 +1,1 @@
-(cl:in-package px4_command-msg)
-(cl:export '(HEADER-VAL
-          HEADER
-          COMMAND_ID-VAL
-          COMMAND_ID
-          MODE-VAL
-          MODE
-          REFERENCE_STATE-VAL
-          REFERENCE_STATE
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/msg/_package_ControlCommand.lisp

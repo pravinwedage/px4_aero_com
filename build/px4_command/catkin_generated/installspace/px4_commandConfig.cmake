@@ -68,7 +68,7 @@ set(px4_command_CONFIG_INCLUDED TRUE)
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
   set(px4_command_SOURCE_PREFIX /home/pravin/px4_ws/src/px4_command)
-  set(px4_command_DEVEL_PREFIX /home/pravin/px4_ws/devel)
+  set(px4_command_DEVEL_PREFIX /home/pravin/px4_ws/devel/.private/px4_command)
   set(px4_command_INSTALL_PREFIX "")
   set(px4_command_PREFIX ${px4_command_DEVEL_PREFIX})
 else()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/pravin/px4_ws/install/lib;/home/pravin/catkin_ws/devel/lib;/home/pravin/catkin_tut/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/pravin/px4_ws/install/lib;/home/pravin/px4_ws/devel/lib;/home/pravin/catkin_ws/devel/lib;/home/pravin/catkin_tut/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,10 +1,1 @@
-(cl:in-package px4_command-srv)
-(cl:export '(LONGITUDE-VAL
-          LONGITUDE
-          LATITUDE-VAL
-          LATITUDE
-          ALTITUDE-VAL
-          ALTITUDE
-          HOMESET_OK-VAL
-          HOMESET_OK
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/srv/_package_SetHome.lisp

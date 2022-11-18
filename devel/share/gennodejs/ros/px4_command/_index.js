@@ -1,7 +1,1 @@
-
-"use strict";
-
-module.exports = {
-  msg: require('./msg/_index.js'),
-  srv: require('./srv/_index.js')
-};
+/home/pravin/px4_ws/devel/.private/px4_command/share/gennodejs/ros/px4_command/_index.js

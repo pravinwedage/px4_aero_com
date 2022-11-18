@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/pravin/px4_ws/devel/include"
+  "/home/pravin/px4_ws/devel/.private/px4_command/include"
   "/home/pravin/px4_ws/src/px4_command/include"
   "/home/pravin/catkin_ws/devel/include"
   "/home/pravin/catkin_ws/devel/.private/mavros_msgs/include"

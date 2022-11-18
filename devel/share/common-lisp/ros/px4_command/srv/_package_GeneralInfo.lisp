@@ -1,10 +1,1 @@
-(cl:in-package px4_command-srv)
-(cl:export '(CONTROLLERNAME-VAL
-          CONTROLLERNAME
-          TARGETDRONEID-VAL
-          TARGETDRONEID
-          ISMULTI-VAL
-          ISMULTI
-          OKTOSTART-VAL
-          OKTOSTART
-))
+/home/pravin/px4_ws/devel/.private/px4_command/share/common-lisp/ros/px4_command/srv/_package_GeneralInfo.lisp
